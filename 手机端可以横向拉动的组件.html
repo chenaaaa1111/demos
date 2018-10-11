@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width,maximum-scale=1.0, minimum-scale=1.0"/>
+	    <meta name="apple-mobile-web-app-capable" content="yes"/>
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	    <script type="text/javascript" src="javascript/jquery-1.8.3.min.js"></script>
+<!-- 	    <script type="text/javascript" src="libs/rem.js"></script>
+ -->	    <!-- 阿里rem 自适应 -->
+	<title>手机端横向拉动隐藏滚动条</title>
+</head>
+<style type="text/css">
+div,html,body,ul,li{
+	margin: 0;padding: 0;
+}
+.navlist{
+    overflow: scroll;width: 100%;
+    height: 54px;
+    background: #f7f7f7;
+
+}
+
+.navlist::-webkit-scrollbar {
+    display: none;
+}
+
+.navlist::-webkit-scrollbar {
+    display: none;
+}
+ul.messageHeader{
+    background:#f7f7f7;
+    white-space: nowrap;
+    height: 53px;
+    line-height: 53px;
+    color:#666666;
+}
+ul.messageHeader li.active{
+    color: #000;
+    border-bottom: 3px #ff3333 solid;
+    font-weight: 900;
+}
+ul.messageHeader li{
+    display: inline-block;
+    text-align: center;
+    padding: 0 10px;
+    font-size: 18px;
+
+}
+
+</style>
+<!-- <style type="text/css">
+   /*如果需要自适应*/
+    .navlist{
+        overflow: scroll;width: 100%;
+        height:1.5rem;
+        background: #fff;
+        margin-top: .2rem;
+
+    }
+
+.navlist::-webkit-scrollbar {
+    display: none;
+}
+ul.messageHeader{
+    background:#fff;
+    white-space: nowrap;
+    height:1.6rem;
+    line-height: 1.6rem;
+    color:#666666;
+
+}
+ul.messageHeader li.active{
+    color: #fa004b;
+    font-weight: 900;
+}
+ul.messageHeader li{
+    display: inline-block;
+    text-align: center;
+    padding: 0 10px;
+    font-size: .45rem;
+
+
+}
+</style> -->
+<body>
+	   <div class="navlist">
+            <ul class="messageHeader">
+                <li class="active">大事记</li><li>如何选机构</li><li>行业研究</li><li>政策解读</li><li>养老故事</li>
+            </ul>
+        </div>
+</body>
+<script type="text/javascript">
+	$(function () {
+        $('ul.messageHeader li').click(function (e) {
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+    })
+
+
+</script>
+</html>
